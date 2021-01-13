@@ -60,7 +60,7 @@ export default function Home({ data }) {
   return (
     <div className="bg-dark p-3 min-vh-100">
       <Head>
-        <title>Computer Science</title>
+        <title>CS1000</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
