@@ -1,0 +1,40 @@
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  background: black;
+  padding: 1rem;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+ol:not(:first-child) {
+  margin: 1rem 0;
+}
+
+.siblings p:last-child,
+.siblings ol:last-child,
+.siblings ol:last-child h3 {
+  margin-bottom: 0;
+}
+
+span {
+  display: none;
+}
+
+p:empty {
+  display: none;
+}
