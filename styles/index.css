@@ -1,3 +1,20 @@
+body {
+  background: black;
+}
+
+.title {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.youtube,
+p,
+ol:not(:first-child),
+ul:not(:first-child) {
+  display: block;
+  margin: 1rem 0;
+}
+
 ol,
 ul {
   margin: 0;
@@ -5,52 +22,45 @@ ul {
   list-style-type: none;
 }
 
-.title {
-  font-size: 2rem;
-}
-
-body {
-  background: black;
-}
-
-h3 {
-  font-size: 1.25rem;
-  text-transform: uppercase;
+ol[start] {
   margin: 0;
-  background: #222;
-  padding: 1rem;
-}
-
-h3:hover {
-  cursor: pointer;
-}
-
-p,
-.youtube,
-ol:not(:first-child),
-ul:not(:first-child),
-iframe {
-  display: block;
-  margin: 1rem 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 ol:first-child {
   padding-left: 0;
+  padding-right: 0;
 }
 
-ol[start] {
-  padding-left: 0;
+a {
+  text-transform: capitalize;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+h3 {
   margin: 0;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background: #121517;
+  text-transform: capitalize;
+}
+
+h3:hover {
+  cursor: pointer;
+  color: white;
+}
+
+h3 strong {
+  font-weight: normal;
 }
 
 .siblings > * {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.siblings > iframe {
-  padding-left: 0;
-  margin-left: 1rem;
 }
 
 .siblings p:last-child,

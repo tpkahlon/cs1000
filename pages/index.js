@@ -115,9 +115,9 @@ export default function Home({ data }) {
           </small>
         </h1>
       </div>
-      <Accordion variant="dark" className="shadow-lg">
+      <Accordion>
         {result.map((i, index) => (
-          <Card key={index} bg="dark" text="white">
+          <Card key={index} bg="dark" text="secondary">
             <Accordion.Toggle
               as={Card.Header}
               variant="link"
@@ -139,7 +139,6 @@ export default function Home({ data }) {
           href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white"
         >
           Reference
         </a>
@@ -147,7 +146,7 @@ export default function Home({ data }) {
           href="https://github.com/tpkahlon/cs1000"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white ml-3"
+          className="ml-3"
         >
           Source
         </a>
