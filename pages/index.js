@@ -25,6 +25,7 @@ export default function Home({ data }) {
               "src",
               nextSibling.querySelector("iframe").getAttribute("data-ezsrc")
             );
+            iframe.classList.add("d-none");
             siblings.push(iframe);
           } else {
             if (
@@ -34,10 +35,17 @@ export default function Home({ data }) {
               !nextSibling.innerHTML.includes(" -->&nbsp;") &&
               !nextSibling.innerHTML.includes("</span>&nbsp;")
             ) {
+              if (
+                nextSibling.nodeName === "P" ||
+                nextSibling.nodeName === "UL" ||
+                (nextSibling.nodeName === "OL" &&
+                  nextSibling.querySelector("h3") === null)
+              ) {
+                nextSibling.classList.add("d-none");
+              }
               siblings.push(nextSibling);
             }
           }
-          console.log(siblings);
           nextSibling = nextSibling.nextElementSibling;
           if (nextSibling.nodeName === "H2") {
             loop = false;
@@ -56,16 +64,44 @@ export default function Home({ data }) {
         });
       }
     });
+    document.addEventListener("click", (e) => {
+      const node = e.target.nodeName;
+      if (node === "H3") {
+        let loop = true;
+        let siblings = [];
+        let nextSibling =
+          e.target.parentElement.parentElement.nextElementSibling;
+
+        while (loop) {
+          siblings.push(nextSibling);
+          if (nextSibling.nextElementSibling === null) {
+            loop = false;
+          } else {
+            nextSibling = nextSibling.nextElementSibling;
+            if (
+              nextSibling.nodeName === "OL" &&
+              nextSibling.getAttribute("start")
+            ) {
+              loop = false;
+            }
+          }
+        }
+        siblings.forEach((i) => {
+          // foo
+          i.classList.toggle("d-none");
+        });
+      }
+    });
   }
   return (
-    <div className="bg-dark p-3 min-vh-100">
+    <div className="p-3 min-vh-100">
       <Head>
         <title>CS1000</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="text-center mb-3">
-        <h1 className="text-secondary">
+        <h1 className="text-white">
           Ad free version of{" "}
           <small>
             <em>
@@ -88,7 +124,7 @@ export default function Home({ data }) {
             <Accordion.Collapse eventKey={index.toString()}>
               <div
                 dangerouslySetInnerHTML={{ __html: i.siblings }}
-                className="p-3 siblings"
+                className="siblings"
               ></div>
             </Accordion.Collapse>
           </Card>

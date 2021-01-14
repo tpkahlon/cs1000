@@ -9,20 +9,45 @@ ul {
   font-size: 2rem;
 }
 
+body {
+  background: black;
+}
+
 h3 {
   font-size: 1.25rem;
   text-transform: uppercase;
-  margin: 0 0 1rem;
-  background: black;
+  margin: 0;
+  background: #222;
   padding: 1rem;
 }
 
-p {
+h3:hover {
+  cursor: pointer;
+}
+
+p,
+ol:not(:first-child),
+iframe {
+  display: block;
   margin: 1rem 0;
 }
 
-ol:not(:first-child) {
-  margin: 1rem 0;
+ol:first-child {
+  padding-left: 0;
+}
+
+ol[start] {
+  padding-left: 0;
+  margin: 0;
+}
+
+.siblings > * {
+  padding-left: 1rem;
+}
+
+.siblings > iframe {
+  padding-left: 0;
+  margin-left: 1rem;
 }
 
 .siblings p:last-child,
@@ -31,10 +56,7 @@ ol:not(:first-child) {
   margin-bottom: 0;
 }
 
-span {
-  display: none;
-}
-
+span,
 p:empty {
   display: none;
 }
