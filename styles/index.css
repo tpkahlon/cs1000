@@ -27,6 +27,7 @@ h3:hover {
 
 p,
 ol:not(:first-child),
+ul:not(:first-child),
 iframe {
   display: block;
   margin: 1rem 0;
@@ -51,7 +52,6 @@ ol[start] {
 }
 
 .siblings p:last-child,
-.siblings ol:last-child,
 .siblings ol:last-child h3 {
   margin-bottom: 0;
 }
