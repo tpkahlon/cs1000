@@ -26,6 +26,7 @@ h3:hover {
 }
 
 p,
+.youtube,
 ol:not(:first-child),
 ul:not(:first-child),
 iframe {
@@ -44,6 +45,7 @@ ol[start] {
 
 .siblings > * {
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .siblings > iframe {

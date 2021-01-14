@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Accordion, Card } from "react-bootstrap";
+import { URL } from "../common";
 
 export default function Home({ data }) {
   let result = [];
@@ -20,13 +21,16 @@ export default function Home({ data }) {
             nextSibling.nodeName === "DIV" &&
             nextSibling.className === "youtube-responsive-container"
           ) {
-            const iframe = document.createElement("iframe");
-            iframe.setAttribute(
-              "src",
-              nextSibling.querySelector("iframe").getAttribute("data-ezsrc")
+            const hyperlink = document.createElement("a");
+            hyperlink.setAttribute(
+              "href",
+              nextSibling.querySelector("iframe").getAttribute("src")
             );
-            iframe.classList.add("d-none");
-            siblings.push(iframe);
+            hyperlink.setAttribute("target", "_blank");
+            hyperlink.setAttribute("rel", "noopener noreferrer");
+            hyperlink.textContent = "View Lecture on YouTube";
+            hyperlink.classList.add("d-none", "youtube");
+            siblings.push(hyperlink);
           } else {
             if (
               nextSibling.nodeName !== "DIV" &&
@@ -153,9 +157,7 @@ export default function Home({ data }) {
 }
 
 Home.getInitialProps = async () => {
-  const r = await fetch(
-    `https://laconicml.com/computer-science-curriculum-youtube-videos/`
-  );
+  const r = await fetch(URL);
   const j = await r.text();
   return {
     data: j,
