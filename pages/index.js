@@ -24,7 +24,7 @@ export default function Home({ data }) {
             const hyperlink = document.createElement("a");
             hyperlink.setAttribute(
               "href",
-              nextSibling.querySelector("iframe").getAttribute("src")
+              nextSibling.querySelector("iframe").getAttribute("data-ezsrc")
             );
             hyperlink.setAttribute("target", "_blank");
             hyperlink.setAttribute("rel", "noopener noreferrer");
