@@ -70,5 +70,7 @@ h3 strong {
 
 span,
 p:empty {
-  display: none;
+  min-height: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }

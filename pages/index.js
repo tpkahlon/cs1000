@@ -70,15 +70,16 @@ export default function Home({ data }) {
     });
     document.addEventListener("click", (e) => {
       const node = e.target.nodeName;
-      if (node === "H3") {
+      if (node === "H3" || node === "STRONG") {
         let loop = true;
         let siblings = [];
         let nextSibling =
-          e.target.parentElement.parentElement.nextElementSibling;
-
+        node === "STRONG" ? e.target.parentElement.parentElement.parentElement.nextElementSibling : e.target.parentElement.parentElement.nextElementSibling;
         while (loop) {
           siblings.push(nextSibling);
-          if (nextSibling.nextElementSibling === null) {
+          if (nextSibling === null) {
+            loop = false;
+          } else if (nextSibling.nextElementSibling === null) {
             loop = false;
           } else {
             nextSibling = nextSibling.nextElementSibling;
@@ -105,15 +106,7 @@ export default function Home({ data }) {
       </Head>
 
       <div className="text-center mb-3">
-        <h1 className="text-white">
-          Ad free version of{" "}
-          <small>
-            <em>
-              This is The Entire Computer Science Curriculum in 1000 YouTube
-              Videos...
-            </em>
-          </small>
-        </h1>
+        <h1 className="text-white">CS1000</h1>
       </div>
       <Accordion>
         {result.map((i, index) => (
