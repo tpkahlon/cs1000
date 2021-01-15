@@ -58,6 +58,11 @@ h3 strong {
   font-weight: normal;
 }
 
+.siblings ol + ul,
+.siblings ol + .youtube {
+  margin-top: -1rem;
+}
+
 .siblings > * {
   padding-left: 1rem;
   padding-right: 1rem;
