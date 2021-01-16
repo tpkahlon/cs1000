@@ -2,6 +2,11 @@ body {
   background: black;
 }
 
+.accordion {
+  margin: 0 auto;
+  max-width: 30rem;
+}
+
 .title {
   color: white;
   font-size: 1.25rem;
