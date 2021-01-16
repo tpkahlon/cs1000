@@ -63,7 +63,7 @@ export default function Home({ data }) {
           })
           .join("");
         result.push({
-          title: text,
+          title: text.replace(/.*:\s/, ""),
           siblings,
         });
       }
@@ -74,7 +74,10 @@ export default function Home({ data }) {
         let loop = true;
         let siblings = [];
         let nextSibling =
-        node === "STRONG" ? e.target.parentElement.parentElement.parentElement.nextElementSibling : e.target.parentElement.parentElement.nextElementSibling;
+          node === "STRONG"
+            ? e.target.parentElement.parentElement.parentElement
+                .nextElementSibling
+            : e.target.parentElement.parentElement.nextElementSibling;
         while (loop) {
           siblings.push(nextSibling);
           if (nextSibling === null) {
