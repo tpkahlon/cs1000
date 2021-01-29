@@ -16,16 +16,17 @@ export default function Home({ data }) {
         let loop = true;
         let siblings = [];
         let nextSibling = i.nextElementSibling;
+        let youTube;
         while (loop) {
           if (
             nextSibling.nodeName === "DIV" &&
             nextSibling.className === "youtube-responsive-container"
           ) {
+            youTube =
+              nextSibling.querySelector("iframe").getAttribute("data-ezsrc") ||
+              nextSibling.querySelector("iframe").getAttribute("src");
             const hyperlink = document.createElement("a");
-            hyperlink.setAttribute(
-              "href",
-              nextSibling.querySelector("iframe").getAttribute("data-ezsrc")
-            );
+            hyperlink.setAttribute("href", youTube);
             hyperlink.setAttribute("target", "_blank");
             hyperlink.setAttribute("rel", "noopener noreferrer");
             hyperlink.textContent = "View Lecture on YouTube";
@@ -108,8 +109,25 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="text-center mb-3">
-        <h1 className="text-white">CS1000</h1>
+      <div className="text-center">
+        <h1 className="text-white m-0 mb-1">CS1000</h1>
+      </div>
+      <div className="text-center mb-3 d-flex justify-content-center">
+        <a
+          href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Reference
+        </a>
+        <a
+          href="https://github.com/tpkahlon/cs1000"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-3"
+        >
+          Source
+        </a>
       </div>
       <Accordion>
         {result.map((i, index) => (
@@ -130,22 +148,19 @@ export default function Home({ data }) {
           </Card>
         ))}
       </Accordion>
-      <div className="text-center my-3 d-flex justify-content-center">
-        <a
-          href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Reference
-        </a>
-        <a
-          href="https://github.com/tpkahlon/cs1000"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ml-3"
-        >
-          Source
-        </a>
+      <div className="text-muted text-center mt-3 d-flex justify-content-center dignity">
+        <p className="m-0">
+          Proudly made by son of an{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/2020%E2%80%932021_Indian_farmers%27_protest"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-success"
+          >
+            Indian farmer
+          </a>
+          , for the people...
+        </p>
       </div>
     </div>
   );

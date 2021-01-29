@@ -84,3 +84,7 @@ p:empty {
   height: 0 !important;
   display: none !important;
 }
+
+.dignity {
+  font-style: italic;
+}
