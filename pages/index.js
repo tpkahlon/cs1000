@@ -7,6 +7,17 @@ export default function Home({ data }) {
   if (process.browser) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
+    Array.from(doc.querySelectorAll("a")).forEach((i) => {
+      if (i.getAttribute("href") && i.getAttribute("href") !== "#") {
+        i.setAttribute(
+          "href",
+          `${i
+            .getAttribute("href")
+            .replace("http://web.archive.org/web/20210210143025/", "")}`
+        );
+        i.setAttribute("target", "_blank");
+      }
+    });
     Array.from(doc.querySelectorAll("h2")).forEach((i) => {
       const text = i.textContent;
       const isTextValid = !(
@@ -25,6 +36,10 @@ export default function Home({ data }) {
             youTube =
               nextSibling.querySelector("iframe").getAttribute("data-ezsrc") ||
               nextSibling.querySelector("iframe").getAttribute("src");
+            youTube = youTube.replace(
+              "http://web.archive.org/web/20210210143025if_/",
+              ""
+            );
             const hyperlink = document.createElement("a");
             hyperlink.setAttribute("href", youTube);
             hyperlink.setAttribute("target", "_blank");
@@ -111,7 +126,10 @@ export default function Home({ data }) {
 
       <div className="text-center">
         <h1 className="text-white m-0 mb-1">CS1000</h1>
-        <p className="text-secondary m-0 mb-3">I've switched to <code>web.archive.org</code> for faster rendering of this page. Current version is: <code>02/10/2021</code>.</p>
+        <p className="text-secondary m-0 mb-3">
+          I've switched to <code>web.archive.org</code> for faster rendering of
+          this page. Current version is: <code>02/10/2021</code>.
+        </p>
       </div>
       <div className="text-center mb-3 d-flex justify-content-center">
         <a
