@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
+  font-size: 1rem;
   background: black;
 }
 
@@ -20,6 +29,10 @@ ul:not(:first-child) {
   margin: 1rem 0;
 }
 
+ol > li a {
+  display: block;
+}
+
 ol,
 ul {
   margin: 0;
@@ -38,20 +51,20 @@ ol:first-child {
   padding-right: 0;
 }
 
-a {
-  text-transform: capitalize;
-}
-
-a:link {
-  text-decoration: none;
-}
-
 h3 {
   margin: 0;
   padding: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   background: #121517;
-  text-transform: capitalize;
+  text-transform: lowercase;
+}
+
+h3 strong {
+  display: block;
+}
+
+h3 strong::first-letter {
+  text-transform: uppercase;
 }
 
 h3:hover {
@@ -61,6 +74,7 @@ h3:hover {
 
 h3 strong {
   font-weight: normal;
+  font-style: italic;
 }
 
 .siblings ol + ul,
@@ -87,4 +101,13 @@ p:empty {
 
 .dignity {
   font-style: italic;
+}
+
+a:link {
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+a::first-letter {
+  text-transform: uppercase;
 }

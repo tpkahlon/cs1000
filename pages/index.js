@@ -1,12 +1,24 @@
 import Head from "next/head";
 import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
+import { HiDotsVertical } from "react-icons/hi";
 
 export default function Home({ data }) {
   let result = [];
   if (process.browser) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
+    Array.from(doc.querySelectorAll("ol li h3 strong")).forEach((i) => {
+      const tempDiv = document.createElement("div");
+      tempDiv.classList.add("ml-3");
+      tempDiv.textContent = "+";
+      i.insertAdjacentElement("afterend", tempDiv);
+      i.parentElement.classList.add(
+        "d-flex",
+        "align-items-center",
+        "justify-content-between"
+      );
+    });
     Array.from(doc.querySelectorAll("a")).forEach((i) => {
       if (i.getAttribute("href") && i.getAttribute("href") !== "#") {
         i.setAttribute(
@@ -126,12 +138,12 @@ export default function Home({ data }) {
 
       <div className="text-center">
         <h1 className="text-white m-0 mb-1">CS1000</h1>
-        <p className="text-secondary m-0 mb-3">
+        <p className="text-secondary m-0 mb-2">
           I've switched to <code>web.archive.org</code> for faster rendering of
           this page. Current version is: <code>02/10/2021</code>.
         </p>
       </div>
-      <div className="text-center mb-3 d-flex justify-content-center">
+      <div className="text-center mb-3 d-flex flex-column justify-content-center">
         <a
           href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
           target="_blank"
@@ -143,7 +155,6 @@ export default function Home({ data }) {
           href="https://github.com/tpkahlon/cs1000"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-3"
         >
           Source
         </a>
@@ -155,8 +166,12 @@ export default function Home({ data }) {
               as={Card.Header}
               variant="link"
               eventKey={index.toString()}
+              className="d-flex justify-content-between align-items-center p-3"
             >
               <div className="title">{i.title}</div>
+              <div className="ml-3">
+                <HiDotsVertical />
+              </div>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={index.toString()}>
               <div
