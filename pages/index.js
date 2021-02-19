@@ -111,6 +111,7 @@ export default function Home({ data }) {
 
       <div className="text-center">
         <h1 className="text-white m-0 mb-1">CS1000</h1>
+        <p className="text-secondary m-0 mb-3">I've switched to <code>web.archive.org</code> for faster rendering of this page. Current version is: <code>02/10/2021</code>.</p>
       </div>
       <div className="text-center mb-3 d-flex justify-content-center">
         <a
