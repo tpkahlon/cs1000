@@ -29,8 +29,12 @@ ul:not(:first-child) {
   margin: 1rem 0;
 }
 
+ul > li a,
 ol > li a {
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ol,

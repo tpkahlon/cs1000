@@ -56,7 +56,7 @@ export default function Home({ data }) {
             hyperlink.setAttribute("href", youTube);
             hyperlink.setAttribute("target", "_blank");
             hyperlink.setAttribute("rel", "noopener noreferrer");
-            hyperlink.textContent = "View Lecture on YouTube";
+            hyperlink.textContent = "Reference lecture on this topic";
             hyperlink.classList.add("d-none", "youtube");
             siblings.push(hyperlink);
           } else {
@@ -143,7 +143,7 @@ export default function Home({ data }) {
           this page. Current version is: <code>02/10/2021</code>.
         </p>
       </div>
-      <div className="text-center mb-3 d-flex flex-column justify-content-center">
+      <div className="text-center mb-3 d-flex flex-column justify-content-center align-items-center">
         <a
           href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
           target="_blank"
