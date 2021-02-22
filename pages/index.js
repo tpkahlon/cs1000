@@ -153,7 +153,7 @@ export default function Home({ data }) {
       </div>
       <div className="text-center mb-3 d-flex flex-column justify-content-center align-items-center">
         <a href="#" onClick={handleClick}>
-          {darkMode ? "Turn light off" : "Turn light on"}
+          {darkMode ? "Turn light on" : "Turn light off"}
         </a>
         <a
           href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
