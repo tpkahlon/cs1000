@@ -11,6 +11,20 @@ body {
   background: black;
 }
 
+nav {
+  padding: 0 !important;
+}
+
+nav a {
+  word-break: break-all;
+}
+
+@media screen and (min-width: 40rem) {
+  nav {
+    max-width: 30rem;
+  }
+}
+
 .accordion {
   margin: 0 auto;
   max-width: 30rem;

@@ -12,7 +12,7 @@ export default function Home({ data }) {
   }, [darkMode]);
   const handleClick = () => {
     setDarkMode(!darkMode);
-  }
+  };
   if (process.browser) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
@@ -151,25 +151,29 @@ export default function Home({ data }) {
           this page. Current version is: <code>02/10/2021</code>.
         </p>
       </div>
-      <div className="text-center mb-3 d-flex flex-column justify-content-center align-items-center">
-        <a href="#" onClick={handleClick}>
-          {darkMode ? "Turn light on" : "Turn light off"}
-        </a>
-        <a
-          href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Reference
-        </a>
-        <a
-          href="https://github.com/tpkahlon/cs1000"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Source
-        </a>
-      </div>
+      <nav className="container-fluid">
+        <div className="text-center mb-3 row mx-auto">
+          <a href="#" onClick={handleClick} className="col col-4">
+            {darkMode ? "Lights on" : "Lights off"}
+          </a>
+          <a
+            href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="col col-4"
+          >
+            Reference
+          </a>
+          <a
+            href="https://github.com/tpkahlon/cs1000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="col col-4"
+          >
+            Source
+          </a>
+        </div>
+      </nav>
       <Accordion>
         {result.map((i, index) => (
           <Card key={index} bg="dark" text="secondary">
@@ -194,7 +198,7 @@ export default function Home({ data }) {
         ))}
       </Accordion>
       <div className="text-muted text-center mt-3 d-flex justify-content-center dignity">
-        <p className="m-0">
+        <p className="m-0 small">
           Proudly made by son of an{" "}
           <a
             href="https://en.wikipedia.org/wiki/2020%E2%80%932021_Indian_farmers%27_protest"
