@@ -2,9 +2,17 @@ import Head from "next/head";
 import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
 import { HiDotsVertical } from "react-icons/hi";
+import React, { useState, useEffect } from "react";
 
 export default function Home({ data }) {
   let result = [];
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode");
+  }, [darkMode]);
+  const handleClick = () => {
+    setDarkMode(!darkMode);
+  }
   if (process.browser) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
@@ -144,6 +152,9 @@ export default function Home({ data }) {
         </p>
       </div>
       <div className="text-center mb-3 d-flex flex-column justify-content-center align-items-center">
+        <a href="#" onClick={handleClick}>
+          {darkMode ? "Turn light off" : "Turn light on"}
+        </a>
         <a
           href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
           target="_blank"

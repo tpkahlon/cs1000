@@ -115,3 +115,31 @@ a:link {
 a::first-letter {
   text-transform: uppercase;
 }
+
+.dark-mode {
+  background: white;
+}
+
+.dark-mode .text-white,
+.dark-mode .text-secondary {
+  color: black !important;
+}
+
+.dark-mode .bg-dark {
+  color: black !important;
+  background: white !important;
+}
+
+.dark-mode .title {
+  color: black !important;
+}
+
+.dark-mode h3 {
+  background: #eee !important;
+}
+
+.dark-mode h3:hover,
+.dark-mode h3:active,
+.dark-mode h3:focus {
+  color: #666 !important;
+}
