@@ -100,6 +100,15 @@ export default function Home({ data }) {
     document.addEventListener("click", (e) => {
       const node = e.target.nodeName;
       if (node === "H3" || node === "STRONG") {
+        let parent =
+          node === "H3"
+            ? e.target
+            : node === "STRONG"
+            ? e.target.parentElement
+            : false;
+        parent.querySelector(".ml-3").textContent =
+          parent.querySelector(".ml-3").textContent === "+" ? "-" : "+";
+        console.log(parent);
         let loop = true;
         let siblings = [];
         let nextSibling =
