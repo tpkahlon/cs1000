@@ -2,20 +2,13 @@ import Head from "next/head";
 import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
 import { HiDotsVertical } from "react-icons/hi";
-import React, { useState, useEffect } from "react";
 
 export default function Home({ data }) {
   let result = [];
-  const [darkMode, setDarkMode] = useState(false);
-  useEffect(() => {
-    document.body.classList.toggle("dark-mode");
-  }, [darkMode]);
-  const handleClick = () => {
-    setDarkMode(!darkMode);
-  };
   if (process.browser) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
+    document.body.classList.add("light-mode");
     Array.from(doc.querySelectorAll("ol li h3 strong")).forEach((i) => {
       const tempDiv = document.createElement("div");
       tempDiv.classList.add("ml-3");
@@ -136,6 +129,12 @@ export default function Home({ data }) {
         });
       }
     });
+    document.querySelector("#toggle").addEventListener("click", (e) => {
+      document.body.classList.toggle("light-mode");
+      e.target.textContent = document.body.classList.contains("light-mode")
+        ? "Lights off"
+        : "Lights on";
+    });
   }
   return (
     <div className="p-3 min-vh-100">
@@ -153,8 +152,8 @@ export default function Home({ data }) {
       </div>
       <nav className="container-fluid">
         <div className="text-center mb-3 row mx-auto">
-          <a href="#" onClick={handleClick} className="col col-4">
-            {darkMode ? "Lights on" : "Lights off"}
+          <a href="#" className="col col-4" id="toggle">
+            Lights off
           </a>
           <a
             href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
