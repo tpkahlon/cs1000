@@ -19,7 +19,7 @@ const DATA = [
     id: 3,
     name: "Kimberly Brehm",
     logo:
-      "https://pbs.twimg.com/profile_images/715722871805378560/ByeMuQxp_400x400.jpg",
+      "https://yt3.ggpht.com/ytc/AAUvwngAGW5RQy1EwDhud6aWpyYtnKNicbs491MJVJ95rwQ=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/c/KimberlyBrehm",
   },
   {
