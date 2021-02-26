@@ -191,7 +191,7 @@ a::first-letter {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #eee;
+  background: #222;
   border: 1px solid #444;
   border-radius: 0.4rem;
 }
@@ -224,6 +224,7 @@ a::first-letter {
 }
 
 .light-mode .lecturers__card {
+  background: #eee;
   border-color: silver;
 }
 
