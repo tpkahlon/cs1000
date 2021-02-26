@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardColumns } from "react-bootstrap";
 import { DATA } from "../common";
 
 const Lecturers = () => {
@@ -18,10 +17,8 @@ const Lecturers = () => {
             key={id}
           >
             <img variant="top" src={logo} alt={`${name} logo`} />
-            <div className="p-2 mt-2 text">
-              <div className="text-capitalize text-secondary m-0 p-0">
-                {name}
-              </div>
+            <div className="p-2 text text-capitalize text-secondary m-0 p-0">
+              {name}
             </div>
           </a>
         ))}

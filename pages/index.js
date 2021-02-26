@@ -3,6 +3,7 @@ import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
 import { HiDotsVertical } from "react-icons/hi";
 import Lecturers from "../components/Lecturers";
+import About from "../components/About";
 
 export default function Home({ data }) {
   let result = [];
@@ -207,6 +208,7 @@ export default function Home({ data }) {
         ))}
       </Accordion>
       <Lecturers />
+      <About />
       <div className="text-muted text-center d-flex justify-content-center dignity">
         <p className="m-0 small">
           Proudly made by son of an{" "}
