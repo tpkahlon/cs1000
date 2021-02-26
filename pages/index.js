@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
 import { HiDotsVertical } from "react-icons/hi";
+import Lecturers from "../components/Lecturers";
 
 export default function Home({ data }) {
   let result = [];
@@ -205,7 +206,8 @@ export default function Home({ data }) {
           </Card>
         ))}
       </Accordion>
-      <div className="text-muted text-center mt-3 d-flex justify-content-center dignity">
+      <Lecturers />
+      <div className="text-muted text-center d-flex justify-content-center dignity">
         <p className="m-0 small">
           Proudly made by son of an{" "}
           <a
