@@ -192,16 +192,12 @@ a::first-letter {
   align-items: center;
   text-align: center;
   background: #eee;
-  border: 1px solid silver;
+  border: 1px solid #444;
   border-radius: 0.4rem;
 }
 
 .lecturers__card:hover {
-  box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.3);
-}
-
-.light-mode .lecturers__card:hover {
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.6);
 }
 
 .lecturers__card img {
@@ -217,7 +213,7 @@ a::first-letter {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: black;
   box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -225,4 +221,16 @@ a::first-letter {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.light-mode .lecturers__card {
+  border-color: silver;
+}
+
+.light-mode .lecturers__card:hover {
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .lecturers .text {
+  background: rgba(255, 255, 255, 0.85);
 }
