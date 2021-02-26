@@ -171,21 +171,19 @@ a::first-letter {
   color: black;
 }
 
-@media screen and (max-width: 576px) {
+.lecturers {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media screen and (min-width: 576px) {
   .lecturers {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    grid-column-gap: 1.25rem;
-    column-gap: 1.25rem;
-    orphans: 1;
-    widows: 1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.lecturers .card {
+.lecturers__card {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -193,20 +191,24 @@ a::first-letter {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #333;
+  background: #eee;
+  border: 1px solid silver;
+  border-radius: 0.4rem;
 }
 
-.lecturers .card:hover {
+.lecturers__card:hover {
   box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.3);
 }
 
-.light-mode .lecturers .card:hover {
+.light-mode .lecturers__card:hover {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-.lecturers .card-img-top {
+.lecturers__card img {
   border-radius: 0;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 7rem;
+  margin-bottom: 2.5rem;
 }
 
 .lecturers .text {
@@ -219,7 +221,7 @@ a::first-letter {
   box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
 }
 
-.lecturers .card-title {
+.lecturers .text div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
