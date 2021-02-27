@@ -203,6 +203,7 @@ a::first-letter {
 .lecturers__card img {
   border-radius: 0;
   object-fit: contain;
+  min-height: 7rem;
   max-height: 7rem;
 }
 

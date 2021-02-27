@@ -72,10 +72,10 @@ const DATA = [
   },
   {
     id: 11,
-    name: "Sahil Jain",
+    name: "UC Berkeley",
     logo:
-      "https://yt3.ggpht.com/ytc/AAUvwnjjzWkrYjd95um6rVk1NdEQ0TiXzIaejauGtHojAA=s176-c-k-c0x00ffffff-no-rj",
-    url: "https://www.youtube.com/channel/UCqKVV_NjGDkNDVAE3Q78rWg",
+      "https://gammas.org/wp-content/uploads/elementor/thumbs/ucb-nr8ngabnugcealvx9dgt2fpoa8nm5rr6745j70qz4o.png",
+    url: "https://www.youtube.com/playlist?list=PLRdybCcWDFzCag9A0h1m9QYaujD0xefgM",
   },
   {
     id: 12,
@@ -86,90 +86,83 @@ const DATA = [
   },
   {
     id: 13,
-    name: "Harsha G.",
-    logo:
-      "https://yt3.ggpht.com/ytc/AAUvwniiu1UtLxsSw8bL_NFF00zomVeLEyZCd4yqWidn_es=s176-c-k-c0x00ffffff-no-rj",
-    url: "https://www.youtube.com/channel/UCsDNz3Xb_2EEc9ppMMmiDRA",
-  },
-  {
-    id: 14,
     name: "Tutorials Point",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwngZdUg7Vl6HYH0WyxcPuL_aPDM3N8SWEKPNZVwz=s176-c-k-c0x00ffffff-no-rj-mo",
     url: "https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg",
   },
   {
-    id: 15,
+    id: 14,
     name: "Harvard",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwnjm1z7VHY8eqbD4SMOuHfJYreKBPAXS6Aow-4Fy-g=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/c/harvard",
   },
   {
-    id: 16,
+    id: 15,
     name: "Corey Schafer",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwngomgNvn2XgfFWEVlxCl_tUVEOhmUTUTlesdnuD=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/c/Coreyms",
   },
   {
-    id: 17,
+    id: 16,
     name: "Stanford",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwngt3ZC46Eau0L9NJz_9ChoDwydCmuS-42g_c6VA=s176-c-k-c0x00ffffff-no-rj-mo",
     url: "https://www.youtube.com/channel/UCBa5G_ESCn8Yd4vw5U-gIcg",
   },
   {
-    id: 18,
+    id: 17,
     name: "Sentdex",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwniWY0KJZhfkhAau-e_5OEeWxXabgPObQVGTL6adyw=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/c/sentdex",
   },
   {
-    id: 19,
+    id: 18,
     name: "MIT",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwnizHmnc1jT1675Eik8WT7yrU5c9qMDjJvd0cyUUTX0=s176-c-k-c0x00ffffff-no-rj-mo",
     url: "https://www.youtube.com/channel/UC_7WrbZTCODu1o_kfUMq88g",
   },
   {
-    id: 20,
+    id: 19,
     name: "Alexander Amini",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwni5bnt2me0FKmWGJNB69uIuj-FOEOZAE4yZMsUf=s176-c-k-c0x00ffffff-no-rj-mo",
     url: "https://www.youtube.com/user/Zan560",
   },
   {
-    id: 21,
+    id: 20,
     name: "Code with Chris",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwngNgdpAIz6TsTEJGGs5JzGSbYlS58SQ1W8kzWNqbQ=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/channel/UC2D6eRvCeMtcF5OGHf1-trw",
   },
   {
-    id: 22,
+    id: 21,
     name: "MIT OpenCourseWare",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwniz0cQuf5DkaTMFcOleJYHcLL2eepERIVkj7wX5=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/c/mitocw",
   },
   {
-    id: 23,
+    id: 22,
     name: "TensorFlow",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwnie3IpnRBxxhUneo-JiygM-n9JxloBPkR9xVydDeQ=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/channel/UC0rqucBdTuFTjJiefW5t-IQ",
   },
   {
-    id: 24,
+    id: 23,
     name: "Lex Fridman",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwng7pV_GT35PBzaa2hIhR_C9mh144SRUDMI-KWb2JU4=s176-c-k-c0x00ffffff-no-rj",
     url: "https://www.youtube.com/channel/UCSHZKyawb77ixDdsGog4iWA",
   },
   {
-    id: 25,
+    id: 24,
     name: "Rebel Coder",
     logo:
       "https://yt3.ggpht.com/ytc/AAUvwngec_ZjxmvocfW_ZuIx0vDE-6qQOspYAiyQQonLzg=s176-c-k-c0x00ffffff-no-rj",
