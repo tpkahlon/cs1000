@@ -1,16 +1,24 @@
 import Head from "next/head";
-import { Accordion, Card } from "react-bootstrap";
 import { URL } from "../common";
-import { HiDotsVertical } from "react-icons/hi";
 import Lecturers from "../components/Lecturers";
 import About from "../components/About";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Semesters from "../components/Semesters";
+import React, { useEffect, useState } from "react";
 
 export default function Home({ data }) {
-  let result = [];
-  if (process.browser) {
+  const [result, setResult] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+    return () => {
+      playWithDom();
+    };
+  }, [loading]);
+  const playWithDom = () => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
-    document.body.classList.add("light-mode");
     Array.from(doc.querySelectorAll("ol li h3 strong")).forEach((i) => {
       const tempDiv = document.createElement("div");
       tempDiv.classList.add("ml-3");
@@ -93,9 +101,11 @@ export default function Home({ data }) {
             }
           })
           .join("");
-        result.push({
-          title: text.replace(/.*:\s/, ""),
-          siblings,
+        setResult((prevResult) => {
+          return prevResult.concat({
+            title: text.replace(/.*:\s/, ""),
+            siblings,
+          });
         });
       }
     });
@@ -110,7 +120,6 @@ export default function Home({ data }) {
             : false;
         parent.querySelector(".ml-3").textContent =
           parent.querySelector(".ml-3").textContent === "+" ? "-" : "+";
-        console.log(parent);
         let loop = true;
         let siblings = [];
         let nextSibling =
@@ -141,88 +150,23 @@ export default function Home({ data }) {
       }
     });
     document.querySelector("#toggle").addEventListener("click", (e) => {
-      document.body.classList.toggle("light-mode");
-      e.target.textContent = document.body.classList.contains("light-mode")
-        ? "Lights off"
-        : "Lights on";
+      document.body.classList.toggle("dark-mode");
+      e.target.textContent = document.body.classList.contains("dark-mode")
+        ? "Lights on"
+        : "Lights off";
     });
-  }
+  };
   return (
     <div className="p-3 min-vh-100">
       <Head>
         <title>CS1000</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="text-center">
-        <h1 className="text-white m-0 mb-1">CS1000</h1>
-        <p className="text-secondary m-0 mb-2">
-          I've switched to <code>web.archive.org</code> for faster rendering of
-          this page. Current version is: <code>02/10/2021</code>.
-        </p>
-      </div>
-      <nav className="container-fluid">
-        <div className="text-center mb-3 row mx-auto">
-          <a href="#" className="col col-4" id="toggle">
-            Lights off
-          </a>
-          <a
-            href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="col col-4"
-          >
-            Reference
-          </a>
-          <a
-            href="https://github.com/tpkahlon/cs1000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="col col-4"
-          >
-            Source
-          </a>
-        </div>
-      </nav>
-      <Accordion>
-        {result.map((i, index) => (
-          <Card key={index} bg="dark" text="secondary">
-            <Accordion.Toggle
-              as={Card.Header}
-              variant="link"
-              eventKey={index.toString()}
-              className="d-flex justify-content-between align-items-center p-3"
-            >
-              <div className="title">{i.title}</div>
-              <div className="ml-3">
-                <HiDotsVertical />
-              </div>
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey={index.toString()}>
-              <div
-                dangerouslySetInnerHTML={{ __html: i.siblings }}
-                className="siblings"
-              ></div>
-            </Accordion.Collapse>
-          </Card>
-        ))}
-      </Accordion>
+      <Header />
+      <Semesters result={result} />
       <Lecturers />
       <About />
-      <div className="text-muted text-center d-flex justify-content-center dignity">
-        <p className="m-0 small">
-          Proudly made by son of an{" "}
-          <a
-            href="https://en.wikipedia.org/wiki/2020%E2%80%932021_Indian_farmers%27_protest"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-success"
-          >
-            Indian farmer
-          </a>
-          , for the people...
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }
