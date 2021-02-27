@@ -11,18 +11,21 @@ body {
   background: white;
 }
 
-nav {
-  padding: 0 !important;
-
+nav.container-fluid {
+  padding: 0;
+  @media screen and (min-width: 40rem) {
+    max-width: 30rem;
+  }
   a {
     word-break: break-all;
   }
 }
 
-@media screen and (min-width: 40rem) {
-  nav {
-    max-width: 30rem;
-  }
+.accordion {
+  overflow: hidden;
+  background: #eee;
+  min-height: 31.5625rem;
+  border-radius: 0.25rem;
 }
 
 .accordion,
@@ -33,7 +36,7 @@ nav {
 
 .title {
   font-size: 1.25rem;
-  color: black !important;
+  color: black;
 }
 
 .youtube,
@@ -93,14 +96,14 @@ h3 {
   margin: 0;
   padding: 1rem;
   font-size: 1rem;
-  background: #eee !important;
+  background: #eee;
   text-transform: lowercase;
 
   &:hover,
   &:active,
   &:focus {
     cursor: pointer;
-    color: #666 !important;
+    color: #666;
   }
 
   strong {
@@ -158,19 +161,7 @@ a {
   }
 }
 
-.bg-dark {
-  color: black !important;
-  background: white !important;
-}
-
-.text-secondary {
-  color: black !important;
-}
-
-h1 {
-  color: black !important;
-}
-
+h1,
 .featured {
   color: black;
 }
@@ -181,60 +172,66 @@ h1 {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-@media screen and (min-width: 576px) {
-  .lecturers {
+  @media screen and (min-width: 576px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-}
-
-.lecturers__card {
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 0.4rem;
-  background: #eee;
-  border: 1px solid silver;
-
-  &:hover .text {
-    color: #777 !important;
-  }
-
-  img {
-    border-radius: 0;
-    object-fit: contain;
+  &__card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0.4rem;
+    background: #eee;
+    border: 1px solid silver;
     min-height: 7rem;
-    max-height: 7rem;
+    &:hover .text {
+      color: #777 !important;
+    }
+
+    img {
+      border-radius: 0;
+      object-fit: contain;
+      min-height: 7rem;
+      max-height: 7rem;
+    }
+  }
+  .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: rgba(255, 255, 255, 0.85);
   }
 }
 
-.lecturers .text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: rgba(255, 255, 255, 0.85);
+.bg-dark {
+  color: black !important;
+  background: white !important;
+}
+
+.text-secondary {
+  color: black !important;
 }
 
 .dark-mode {
   background: black;
-  .title {
-    color: #fff !important;
+  .accordion {
+    background: transparent;
   }
-  h1 {
-    color: white !important;
+  h1,
+  .title,
+  .featured {
+    color: white;
   }
   h3 {
-    color: #ccc !important;
-    background: #111 !important;
+    color: #ccc;
+    background: #111;
 
     &:hover,
     &:active,
     &:focus {
-      color: #fff !important;
+      color: white;
     }
   }
   .bg-dark {
@@ -244,18 +241,17 @@ h1 {
   .text-secondary {
     color: #ccc !important;
   }
-  .featured {
-    color: white;
-  }
-  .lecturers__card {
-    background: #222;
-    border-color: #444;
-    &:hover .text {
-      color: #fff !important;
+  .lecturers {
+    &__card {
+      background: #222;
+      border-color: #444;
+      &:hover .text {
+        color: white !important;
+      }
     }
-  }
-  .lecturers .text {
-    background: black;
-    box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
+    .text {
+      background: black;
+      box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
+    }
   }
 }
