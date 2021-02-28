@@ -194,12 +194,14 @@ h1,
       max-height: 7rem;
     }
   }
-  .text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: rgba(255, 255, 255, 0.85);
-  }
+}
+
+.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
 }
 
 .bg-dark {
@@ -246,9 +248,8 @@ h1,
         color: white !important;
       }
     }
-    .text {
-      background: black;
-      box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
-    }
+  }
+  .text {
+    background: black;
   }
 }
