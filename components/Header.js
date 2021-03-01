@@ -62,7 +62,7 @@ const Header = () => {
             <span className="sr-only">Source</span>
           </a>
           <a
-            href="https://tiny.cc/cs1000dl"
+            href="https://www.reddit.com/r/DataHoarder/comments/kyg97u/entire_mit_computer_science_curriculum_in_1079/"
             target="_blank"
             rel="noopener noreferrer"
             className="col col-3 d-flex align-items-center justify-content-center"
