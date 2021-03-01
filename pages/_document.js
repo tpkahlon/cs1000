@@ -20,6 +20,11 @@ class MyDocument extends Document {
             src="https://www.googletagmanager.com/gtag/js?id=G-52TJYDVGQJ"
           ></script>
           <script
+            data-ad-client="ca-pub-7162519541437651"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+          <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
