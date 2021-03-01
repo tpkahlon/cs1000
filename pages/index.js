@@ -149,12 +149,6 @@ export default function Home({ data }) {
         });
       }
     });
-    document.querySelector("#toggle").addEventListener("click", (e) => {
-      document.body.classList.toggle("dark-mode");
-      e.target.textContent = document.body.classList.contains("dark-mode")
-        ? "Lights on"
-        : "Lights off";
-    });
   };
   return (
     <div className="p-3 min-vh-100">

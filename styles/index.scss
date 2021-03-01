@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -8,15 +10,25 @@ html {
 
 body {
   font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
   background: white;
 }
 
+small {
+  line-height: 1;
+  max-width: 75%;
+}
+
 nav.container-fluid {
-  padding: 0;
+  background: #eee;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
   @media screen and (min-width: 40rem) {
     max-width: 30rem;
   }
   a {
+    font-size: 2rem;
     word-break: break-all;
   }
 }
@@ -117,6 +129,10 @@ h3 {
   }
 }
 
+h2 {
+  line-height: 1 !important;
+}
+
 .siblings {
   ol + {
     ul,
@@ -215,6 +231,17 @@ h1,
 
 .dark-mode {
   background: black;
+  nav {
+    background: #333;
+    a {
+      color: #eee;
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken(#eee, 35%);
+      }
+    }
+  }
   .accordion {
     background: transparent;
   }

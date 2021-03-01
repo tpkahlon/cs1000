@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { FaDownload, FaGithub } from "react-icons/fa";
+import { VscReferences } from "react-icons/vsc";
+import { RiLightbulbFlashLine, RiLightbulbLine } from "react-icons/ri";
 
 const Header = () => {
+  const toggleMode = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const handleClick = () => {
+    document.body.classList.toggle("dark-mode");
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <>
       <div className="text-center">
@@ -11,25 +20,56 @@ const Header = () => {
         </p>
       </div>
       <nav className="container-fluid">
-        <div className="text-center mb-3 row mx-auto">
-          <a href="#" className="col col-4" id="toggle">
-            Lights off
+        <div className="row">
+          <a
+            href="#"
+            className="col col-3 d-flex align-items-center justify-content-center"
+            id="toggle"
+            title="Toggle mode"
+            ref={toggleMode}
+            onClick={handleClick}
+          >
+            {isDarkMode ? (
+              <>
+                <RiLightbulbFlashLine />
+                <span className="sr-only">Lights on</span>
+              </>
+            ) : (
+              <>
+                <RiLightbulbLine />
+                <span className="sr-only">Lights off</span>
+              </>
+            )}
           </a>
           <a
             href="https://laconicml.com/computer-science-curriculum-youtube-videos/"
             target="_blank"
             rel="noopener noreferrer"
-            className="col col-4"
+            className="col col-3 d-flex align-items-center justify-content-center"
+            title="Reference"
           >
-            Reference
+            <VscReferences />
+            <span className="sr-only">Reference</span>
           </a>
           <a
             href="https://github.com/tpkahlon/cs1000"
             target="_blank"
             rel="noopener noreferrer"
-            className="col col-4"
+            className="col col-3 d-flex align-items-center justify-content-center"
+            title="Source"
           >
-            Source
+            <FaGithub />
+            <span className="sr-only">Source</span>
+          </a>
+          <a
+            href="https://tiny.cc/cs1000dl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="col col-3 d-flex align-items-center justify-content-center"
+            title="Download"
+          >
+            <FaDownload />
+            <span className="sr-only">Download</span>
           </a>
         </div>
       </nav>
