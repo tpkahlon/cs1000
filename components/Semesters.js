@@ -2,9 +2,9 @@ import React from "react";
 import { Accordion, Card } from "react-bootstrap";
 import { HiDotsVertical } from "react-icons/hi";
 
-const Semesters = ({ result }) => {
+const Semesters = ({ result, appBody }) => {
   return (
-    <Accordion>
+    <Accordion ref={appBody}>
       {result.map((i, index) => (
         <Card key={index} bg="dark" text="secondary">
           <Accordion.Toggle

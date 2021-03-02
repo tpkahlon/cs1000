@@ -5,9 +5,10 @@ import About from "../components/About";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Semesters from "../components/Semesters";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 export default function Home({ data }) {
+  const appBody = useRef(null);
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -19,6 +20,52 @@ export default function Home({ data }) {
   const playWithDom = () => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/html");
+    domChanges(doc);
+    appBody.current.addEventListener("click", (e) => {
+      semesterClick(e);
+    });
+  };
+  const semesterClick = (e) => {
+    const node = e.target.nodeName;
+    if (node === "H3" || node === "STRONG") {
+      let parent =
+        node === "H3"
+          ? e.target
+          : node === "STRONG"
+          ? e.target.parentElement
+          : false;
+      parent.querySelector(".ml-3").textContent =
+        parent.querySelector(".ml-3").textContent === "+" ? "-" : "+";
+      let loop = true;
+      let siblings = [];
+      let nextSibling =
+        node === "STRONG"
+          ? e.target.parentElement.parentElement.parentElement
+              .nextElementSibling
+          : e.target.parentElement.parentElement.nextElementSibling;
+      while (loop) {
+        siblings.push(nextSibling);
+        if (nextSibling === null) {
+          loop = false;
+        } else if (nextSibling.nextElementSibling === null) {
+          loop = false;
+        } else {
+          nextSibling = nextSibling.nextElementSibling;
+          if (
+            nextSibling.nodeName === "OL" &&
+            nextSibling.getAttribute("start")
+          ) {
+            loop = false;
+          }
+        }
+      }
+      siblings.forEach((i) => {
+        // foo
+        i.classList.toggle("d-none");
+      });
+    }
+  };
+  const domChanges = (doc) => {
     Array.from(doc.querySelectorAll("ol li h3 strong")).forEach((i) => {
       const tempDiv = document.createElement("div");
       tempDiv.classList.add("ml-3");
@@ -109,46 +156,6 @@ export default function Home({ data }) {
         });
       }
     });
-    document.addEventListener("click", (e) => {
-      const node = e.target.nodeName;
-      if (node === "H3" || node === "STRONG") {
-        let parent =
-          node === "H3"
-            ? e.target
-            : node === "STRONG"
-            ? e.target.parentElement
-            : false;
-        parent.querySelector(".ml-3").textContent =
-          parent.querySelector(".ml-3").textContent === "+" ? "-" : "+";
-        let loop = true;
-        let siblings = [];
-        let nextSibling =
-          node === "STRONG"
-            ? e.target.parentElement.parentElement.parentElement
-                .nextElementSibling
-            : e.target.parentElement.parentElement.nextElementSibling;
-        while (loop) {
-          siblings.push(nextSibling);
-          if (nextSibling === null) {
-            loop = false;
-          } else if (nextSibling.nextElementSibling === null) {
-            loop = false;
-          } else {
-            nextSibling = nextSibling.nextElementSibling;
-            if (
-              nextSibling.nodeName === "OL" &&
-              nextSibling.getAttribute("start")
-            ) {
-              loop = false;
-            }
-          }
-        }
-        siblings.forEach((i) => {
-          // foo
-          i.classList.toggle("d-none");
-        });
-      }
-    });
   };
   return (
     <div className="p-3 min-vh-100">
@@ -157,7 +164,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Semesters result={result} />
+      <Semesters appBody={appBody} result={result} />
       <Lecturers />
       <About />
       <Footer />
