@@ -6,7 +6,8 @@ import { RiLightbulbFlashLine, RiLightbulbLine } from "react-icons/ri";
 const Header = () => {
   const toggleMode = useRef(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     document.body.classList.toggle("dark-mode");
     setIsDarkMode(!isDarkMode);
   };

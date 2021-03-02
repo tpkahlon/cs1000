@@ -24,6 +24,10 @@ nav.container-fluid {
   padding: 1rem 0;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.2);
   @media screen and (min-width: 40rem) {
     max-width: 30rem;
   }
@@ -189,7 +193,7 @@ h1,
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   &__card {
-    transition: all 0.4s ease;
+    // transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -233,6 +237,7 @@ h1,
   background: black;
   nav {
     background: #333;
+    box-shadow: 0 25px 25px 5px rgba(0, 0, 0, 0.75);
     a {
       color: #eee;
       &:hover,
