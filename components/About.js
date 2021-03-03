@@ -9,8 +9,8 @@ const About = () => {
         <strong>Filip Projcheski</strong>. You can follow the reference link
         above to view his website. The purpose behind this project was to
         provide a reference site for a beginner, to gain insight into various
-        fields/subjects present around CS/Software engineering. It can serve as
-        a handy material for students to complement their existing undergraduate
+        subjects present around CS and Software engineering. It can serve as a
+        handy material for students to complement their existing undergraduate
         program.
       </div>
     </div>

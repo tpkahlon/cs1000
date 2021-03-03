@@ -30,7 +30,7 @@ class MyDocument extends Document {
           <meta name="title" content="CS1000" />
           <meta
             name="description"
-            content="A reference site for a beginner, to gain insight into various fields/subjects present around CS/Software engineering."
+            content="A reference site for a beginner, to gain insight into various subjects present around CS and Software engineering."
           />
           <meta
             name="keywords"
