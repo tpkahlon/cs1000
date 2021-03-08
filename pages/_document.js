@@ -11,6 +11,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script
+            dangerouslySetInnerHTML={{
+              __html: `if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"tpkahlon",utcoffset:"-5"}))};sessionStorage.setItem("_swa","1");`,
+            }}
+          ></script>
+          <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-52TJYDVGQJ"
           ></script>
