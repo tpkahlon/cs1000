@@ -1,30 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CS1000
 
-## Getting Started
+## Next.js
 
-First, run the development server:
+This page is developed with the help of Create-Next-App. It makes a call to Time machine api endpoint with latest snapshot token available for Laconicml article. Once we get a response, we clean it up and inject a nice looking accordion on the page.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Counter.dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This page uses open source, [counter.dev](https://counter.dev/dashboard.html) to collect user analytics. If you have an account with counter.dev, feel free to take a peek at how this page is performing
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Presentation
 
-## Learn More
+This page takes advantage of React-Bootstrap to generate the accordion section. Lecturer section uses CSS grid with best practices for image handling in cards.
 
-To learn more about Next.js, take a look at the following resources:
+## Lighthouse
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This page tries best to follow procedures to score a good lighthouse score.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Third-party scripts
 
-## Deploy on Vercel
+This page uses Google adsense which display a random ad. If you don't prefer it, having an adblock extension in your browser will take care of it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dark Mode
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This page has a dark mode feature available which is not strictly bound to machine settings. It is entirely optional for the user.
+
+## Community
+
+This page has link for original author's website, subreddit that list scripts to download all videos.
