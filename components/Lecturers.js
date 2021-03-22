@@ -16,7 +16,14 @@ const Lecturers = () => {
             className="lecturers__card"
             key={id}
           >
-            <img variant="top" src={logo} alt={`${name} logo`} loading="lazy" />
+            <img
+              width="100%"
+              height="100%"
+              variant="top"
+              src={logo}
+              alt={`${name} logo`}
+              loading="lazy"
+            />
             <div className="p-2 text text-capitalize text-secondary m-0 p-0">
               {name}
             </div>

@@ -78,6 +78,7 @@ export default function Home({ data }) {
       );
     });
     Array.from(doc.querySelectorAll("a")).forEach((i) => {
+      i.setAttribute("rel", "noopener noreferrer");
       if (i.getAttribute("href") && i.getAttribute("href") !== "#") {
         i.setAttribute(
           "href",

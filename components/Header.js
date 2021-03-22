@@ -29,6 +29,7 @@ const Header = () => {
             title="Toggle mode"
             ref={toggleMode}
             onClick={handleClick}
+            rel="noopener noreferrer"
           >
             {isDarkMode ? (
               <>

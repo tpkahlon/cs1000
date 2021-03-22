@@ -11,6 +11,7 @@ html {
 body {
   font-size: 1rem;
   font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
   background: white;
 }
 
@@ -240,6 +241,11 @@ h1,
 
 .text-secondary {
   color: black !important;
+}
+
+code,
+.text-success {
+  color: #007bff !important;
 }
 
 .dark-mode {
