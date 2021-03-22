@@ -6,7 +6,7 @@ This page is developed with the help of Create-Next-App. It makes a call to Time
 
 ## Counter.dev
 
-This page uses open source, [counter.dev](https://counter.dev/dashboard.html) to collect user analytics. If you have an account with counter.dev, feel free to take a peek at how this page is performing
+This page uses open source, [counter.dev](https://counter.dev/dashboard.html) to collect user analytics. If you have an account with counter.dev, feel free to take a peek at how this page is performing.
 
 ## Presentation
 
