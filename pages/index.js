@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { URL } from "../common";
+// import { URL } from "../common";
 import Lecturers from "../components/Lecturers";
 import About from "../components/About";
 import Header from "../components/Header";
@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Semesters from "../components/Semesters";
 import React, { useRef, useEffect, useState } from "react";
 
-export default function Home({ data }) {
+export default function Home({ data, token }) {
   const appBody = useRef(null);
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -164,7 +164,7 @@ export default function Home({ data }) {
         <title>CS1000</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header token={token} />
       <Semesters appBody={appBody} result={result} />
       <Lecturers />
       <About />
@@ -174,9 +174,16 @@ export default function Home({ data }) {
 }
 
 Home.getInitialProps = async () => {
-  const r = await fetch(URL);
+  const URLAPI = `https://web.archive.org/__wb/calendarcaptures/2?url=https://laconicml.com/computer-science-curriculum-youtube-videos/&date=${new Date().getFullYear()}`;
+  const getTimeMachineAPIResponse = await fetch(URLAPI);
+  const newURL = (latestTimeMachineSnapshot) =>
+    `https://web.archive.org/web/${latestTimeMachineSnapshot}/https://laconicml.com/computer-science-curriculum-youtube-videos/`;
+  const { items } = await getTimeMachineAPIResponse.json();
+  const latestTimeMachineSnapshotId = items[items.length - 1][0];
+  const r = await fetch(newURL(latestTimeMachineSnapshotId));
   const j = await r.text();
   return {
     data: j,
+    token: latestTimeMachineSnapshotId,
   };
 };

@@ -1,6 +1,3 @@
-const URL = `http://web.archive.org/web/20210210143025/https://laconicml.com/computer-science-curriculum-youtube-videos/`;
-// const URL = `https://laconicml.com/computer-science-curriculum-youtube-videos/?googfc&google_norender=true`;
-
 const DATA = [
   {
     id: 1,
@@ -75,7 +72,8 @@ const DATA = [
     name: "UC Berkeley",
     logo:
       "https://gammas.org/wp-content/uploads/elementor/thumbs/ucb-nr8ngabnugcealvx9dgt2fpoa8nm5rr6745j70qz4o.png",
-    url: "https://www.youtube.com/playlist?list=PLRdybCcWDFzCag9A0h1m9QYaujD0xefgM",
+    url:
+      "https://www.youtube.com/playlist?list=PLRdybCcWDFzCag9A0h1m9QYaujD0xefgM",
   },
   {
     id: 12,
@@ -170,4 +168,4 @@ const DATA = [
   },
 ];
 
-export { URL, DATA };
+export { DATA };
