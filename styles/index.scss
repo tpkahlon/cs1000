@@ -26,9 +26,24 @@ nav.container-fluid {
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   position: sticky;
-  top: 0;
+  top: 1rem;
   z-index: 3;
+  margin-top: 1rem;
+  transform-style: preserve-3d;
   box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.2);
+  &::before {
+    position: absolute;
+    content: "";
+    top: -1rem;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    z-index: 2;
+    background: white;
+    transform: translateZ(-10px);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
   @media screen and (min-width: 40rem) {
     max-width: 30rem;
   }
@@ -244,8 +259,13 @@ h1,
 }
 
 code,
-.text-success {
+a.text-success {
   color: #007bff !important;
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken(#007bff, 15%) !important;
+  }
 }
 
 .dark-mode {
@@ -253,6 +273,11 @@ code,
   nav {
     background: #333;
     box-shadow: 0 25px 25px 5px rgba(0, 0, 0, 0.75);
+    &.container-fluid {
+      &::before {
+        background: black;
+      }
+    }
     a {
       color: #eee;
       &:hover,
