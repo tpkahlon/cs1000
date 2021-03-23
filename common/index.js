@@ -1,3 +1,5 @@
+const SANITIZE_URL = (url) => url.match(/(\/h).*/g)[0].replace("/http", "http");
+
 const DATA = [
   {
     id: 1,
@@ -168,4 +170,4 @@ const DATA = [
   },
 ];
 
-export { DATA };
+export { DATA, SANITIZE_URL };

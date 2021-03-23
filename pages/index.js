@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import { URL } from "../common";
+import { SANITIZE_URL } from "../common";
 import Lecturers from "../components/Lecturers";
 import About from "../components/About";
 import Header from "../components/Header";
@@ -80,12 +80,8 @@ export default function Home({ data, token }) {
     Array.from(doc.querySelectorAll("a")).forEach((i) => {
       i.setAttribute("rel", "noopener noreferrer");
       if (i.getAttribute("href") && i.getAttribute("href") !== "#") {
-        i.setAttribute(
-          "href",
-          `${i
-            .getAttribute("href")
-            .replace("http://web.archive.org/web/20210210143025/", "")}`
-        );
+        if (i.getAttribute("href").includes("#content")) return;
+        i.setAttribute("href", `${SANITIZE_URL(i.getAttribute("href"))}`);
         i.setAttribute("target", "_blank");
       }
     });
@@ -107,10 +103,7 @@ export default function Home({ data, token }) {
             youTube =
               nextSibling.querySelector("iframe").getAttribute("data-ezsrc") ||
               nextSibling.querySelector("iframe").getAttribute("src");
-            youTube = youTube.replace(
-              "http://web.archive.org/web/20210210143025if_/",
-              ""
-            );
+            youTube = SANITIZE_URL(youTube);
             const hyperlink = document.createElement("a");
             hyperlink.setAttribute("href", youTube);
             hyperlink.setAttribute("target", "_blank");
