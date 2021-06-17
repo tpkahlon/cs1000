@@ -16,23 +16,16 @@ const Header = ({ token }) => {
       <div className="text-center">
         <h1 className="m-0 mb-1">CS1000</h1>
         <p className="text-secondary m-0 mb-2">
-          This page uses{" "}
-          <a
-            href="https://web.archive.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            web.archive.org
-          </a>{" "}
-          for optimal rendering. Latest time machine{" "}
+          Wayback machine is used to generate this page from recent snapshot
+          token:{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://web.archive.org/__wb/calendarcaptures/2?url=https://laconicml.com/computer-science-curriculum-youtube-videos/&date=2021"
+            href={`https://web.archive.org/web/${token}/https://laconicml.com/computer-science-curriculum-youtube-videos/`}
           >
-            snapshot token
-          </a>{" "}
-          is: <code>{token}</code>.
+            <code>{token}</code>
+          </a>
+          .
         </p>
       </div>
       <nav className="container-fluid">
