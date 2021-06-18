@@ -7,7 +7,10 @@ export default function Home({ data, token, e }) {
     <div className="p-3 min-vh-100">
       <Head>
         <title>CS1000</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="https://image.flaticon.com/icons/png/512/3964/3964036.png"
+        />
       </Head>
       {e ? (
         <div className="min-vh-100 w-100 d-flex justify-content-center align-items-center">

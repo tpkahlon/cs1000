@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export -o dist",
+    "deploy": "npm run export && npx surge --domain `cat CNAME` dist"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
@@ -14,6 +16,7 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "surge": "^0.23.0"
   }
 }

@@ -1,29 +1,35 @@
-# CS1000
+<h1 align="center">
+	<img
+		width="300"
+		alt="CS1000"
+		src="https://image.flaticon.com/icons/png/512/3964/3964036.png">
+</h1>
 
-## Next.js
+<p align="center">
+	<strong>
+		<a href="http://cs1000.surge.sh">Primary Website</a>
+		•
+		<a href="http://cs1000.vercel.com">Secondary Website</a>
+		•
+		<a href="https://github.com/tpkahlon/cs1000">Source</a>
+	</strong>
+</p>
 
-This page is developed with the help of Create-Next-App. It makes a call to Time machine api endpoint with latest snapshot token available for Laconicml article. Once we get a response, we clean it up and inject a nice looking accordion on the page.
+## Overview
 
-## Counter.dev
+**CS1000** is an open source project that beautify listing curated by **Filip Projcheski**. You can follow the reference link above to view his website. The purpose behind this project was to provide a reference site for a beginner, to gain insight into various subjects present around CS and Software engineering. It can serve as a handy material for students to complement their existing undergraduate program.
 
-This page uses open source, [counter.dev](https://counter.dev/dashboard.html) to collect user analytics. If you have an account with counter.dev, feel free to take a peek at how this page is performing.
+## Installation
 
-## Presentation
+CS1000 requires latest [Node.js](https://nodejs.org/) LTS version or more recent.
+[Yarn package manager](https://yarnpkg.com/) is also recommended.
 
-This page takes advantage of React-Bootstrap to generate the accordion section. Lecturer section uses CSS grid with best practices for image handling in cards.
+## Development setup
 
-## Lighthouse
+Simply follow the instructions to run CS1000 from source above, on your own fork.
 
-This page tries best to follow procedures to score a good lighthouse score.
+- `y && y dev` can be used to start CS1000
 
-## Third-party scripts
+## Issues
 
-This page uses Google adsense which display a random ad. If you don't prefer it, having an adblock extension in your browser will take care of it.
-
-## Dark Mode
-
-This page has a dark mode feature available which is not strictly bound to machine settings. It is entirely optional for the user.
-
-## Community
-
-This page has link for original author's website, subreddit that list scripts to download all videos.
+- Please open any issues or bugs you notice [here](https://github.com/tpkahlon/cs1000/issues)
