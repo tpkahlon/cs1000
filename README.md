@@ -32,4 +32,4 @@ Simply follow the instructions to run CS1000 from source above, on your own fork
 
 ## Issues
 
-- Please open any issues or bugs you notice [here](https://github.com/tpkahlon/cs1000/issues)
+- Please open any issue or bug report [here](https://github.com/tpkahlon/cs1000/issues)
