@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -43,7 +42,7 @@ nav.container-fluid::before {
 @media screen and (min-width: 40rem) {
   nav.container-fluid {
     max-width: 30rem;
- }
+  }
 }
 nav.container-fluid a {
   font-size: 2rem;
@@ -52,7 +51,8 @@ nav.container-fluid a {
 .accordion {
   min-height: 31.5625rem;
 }
-.accordion, .page {
+.accordion,
+.page {
   margin: 0 auto;
   max-width: 30rem;
 }
@@ -60,7 +60,9 @@ nav.container-fluid a {
   font-size: 1.25rem;
   color: black;
 }
-.youtube, p, ol:not(:first-child) {
+.youtube,
+p,
+ol:not(:first-child) {
   display: block;
   margin: 1rem 0;
 }
@@ -106,7 +108,9 @@ h3 {
   background: #eee;
   text-transform: lowercase;
 }
-h3:hover, h3:active, h3:focus {
+h3:hover,
+h3:active,
+h3:focus {
   cursor: pointer;
   color: #666;
 }
@@ -123,14 +127,16 @@ h3 strong {
 h2 {
   line-height: 1 !important;
 }
-.siblings ol + ul, .siblings ol + .youtube {
+.siblings ol + ul,
+.siblings ol + .youtube {
   margin-top: -1rem;
 }
 .siblings > * {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.siblings p:last-child, .siblings ol:last-child h3 {
+.siblings p:last-child,
+.siblings ol:last-child h3 {
   margin-bottom: 0;
 }
 .dignity {
@@ -143,7 +149,8 @@ a:link {
 a::first-letter {
   text-transform: uppercase;
 }
-h1, .featured {
+h1,
+.featured {
   color: black;
 }
 .lecturers {
@@ -156,7 +163,7 @@ h1, .featured {
 @media screen and (min-width: 576px) {
   .lecturers {
     grid-template-columns: repeat(3, minmax(0, 1fr));
- }
+  }
 }
 .lecturers__card {
   position: relative;
@@ -199,10 +206,16 @@ h1, .featured {
 .text-secondary {
   color: black !important;
 }
-code, a.text-success {
+code,
+a.text-success {
   color: #007bff !important;
 }
-code:hover, a.text-success:hover, code:focus, a.text-success:focus, code:active, a.text-success:active {
+code:hover,
+a.text-success:hover,
+code:focus,
+a.text-success:focus,
+code:active,
+a.text-success:active {
   color: #0056b3 !important;
 }
 .dark-mode {
@@ -218,20 +231,26 @@ code:hover, a.text-success:hover, code:focus, a.text-success:focus, code:active,
 .dark-mode nav a {
   color: #eee;
 }
-.dark-mode nav a:hover, .dark-mode nav a:focus, .dark-mode nav a:active {
+.dark-mode nav a:hover,
+.dark-mode nav a:focus,
+.dark-mode nav a:active {
   color: #959595;
 }
 .dark-mode .accordion {
   background: transparent;
 }
-.dark-mode h1, .dark-mode .title, .dark-mode .featured {
+.dark-mode h1,
+.dark-mode .title,
+.dark-mode .featured {
   color: white;
 }
 .dark-mode h3 {
   color: #ccc;
   background: #111;
 }
-.dark-mode h3:hover, .dark-mode h3:active, .dark-mode h3:focus {
+.dark-mode h3:hover,
+.dark-mode h3:active,
+.dark-mode h3:focus {
   color: white;
 }
 .dark-mode .bg-dark {
