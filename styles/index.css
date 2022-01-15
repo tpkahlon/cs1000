@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-display: optional;
+  background: white;
+}
+small {
+  line-height: 1;
+  max-width: 75%;
+}
+nav.container-fluid {
+  background: #eee;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 3;
+  margin-top: 1rem;
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.2);
+}
+nav.container-fluid::before {
+  position: absolute;
+  content: "";
+  top: -1rem;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  z-index: 2;
+  background: white;
+  transform: translateZ(-10px);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+@media screen and (min-width: 40rem) {
+  nav.container-fluid {
+    max-width: 30rem;
+ }
+}
+nav.container-fluid a {
+  font-size: 2rem;
+  word-break: break-all;
+}
+.accordion {
+  min-height: 31.5625rem;
+}
+.accordion, .page {
+  margin: 0 auto;
+  max-width: 30rem;
+}
+.title {
+  font-size: 1.25rem;
+  color: black;
+}
+.youtube, p, ol:not(:first-child) {
+  display: block;
+  margin: 1rem 0;
+}
+ul:not(:first-child) {
+  display: block;
+  margin: 1rem 0;
+}
+ul > li a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ol > li a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ol[start] {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+ol:first-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+h3 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #eee;
+  text-transform: lowercase;
+}
+h3:hover, h3:active, h3:focus {
+  cursor: pointer;
+  color: #666;
+}
+h3 strong {
+  display: block;
+}
+h3 strong::first-letter {
+  text-transform: uppercase;
+}
+h3 strong {
+  font-weight: normal;
+  font-style: italic;
+}
+h2 {
+  line-height: 1 !important;
+}
+.siblings ol + ul, .siblings ol + .youtube {
+  margin-top: -1rem;
+}
+.siblings > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.siblings p:last-child, .siblings ol:last-child h3 {
+  margin-bottom: 0;
+}
+.dignity {
+  font-style: italic;
+}
+a:link {
+  text-decoration: none;
+  text-transform: lowercase;
+}
+a::first-letter {
+  text-transform: uppercase;
+}
+h1, .featured {
+  color: black;
+}
+.lecturers {
+  margin: 1rem auto;
+  max-width: 30rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media screen and (min-width: 576px) {
+  .lecturers {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+ }
+}
+.lecturers__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 0.4rem;
+  background: #eee;
+  border: 1px solid silver;
+  min-height: 7rem;
+}
+.lecturers__card:hover .text {
+  color: #777 !important;
+}
+.lecturers__card:hover img {
+  filter: grayscale(1);
+}
+.lecturers__card img {
+  border-radius: 0;
+  object-fit: contain;
+  min-height: 7rem;
+  max-height: 7rem;
+  transition: filter 0.4s ease;
+}
+.text {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.4s ease;
+  background: #fff;
+  box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.15);
+}
+.bg-dark {
+  color: black !important;
+  background: white !important;
+}
+.text-secondary {
+  color: black !important;
+}
+code, a.text-success {
+  color: #007bff !important;
+}
+code:hover, a.text-success:hover, code:focus, a.text-success:focus, code:active, a.text-success:active {
+  color: #0056b3 !important;
+}
+.dark-mode {
+  background: black;
+}
+.dark-mode nav {
+  background: #333;
+  box-shadow: 0 25px 25px 5px rgba(0, 0, 0, 0.75);
+}
+.dark-mode nav.container-fluid::before {
+  background: black;
+}
+.dark-mode nav a {
+  color: #eee;
+}
+.dark-mode nav a:hover, .dark-mode nav a:focus, .dark-mode nav a:active {
+  color: #959595;
+}
+.dark-mode .accordion {
+  background: transparent;
+}
+.dark-mode h1, .dark-mode .title, .dark-mode .featured {
+  color: white;
+}
+.dark-mode h3 {
+  color: #ccc;
+  background: #111;
+}
+.dark-mode h3:hover, .dark-mode h3:active, .dark-mode h3:focus {
+  color: white;
+}
+.dark-mode .bg-dark {
+  color: #6c757d !important;
+  background: #222 !important;
+}
+.dark-mode .text-secondary {
+  color: #ccc !important;
+}
+.dark-mode .lecturers__card {
+  background: #222;
+  border-color: #444;
+}
+.dark-mode .lecturers__card:hover .text {
+  color: white !important;
+}
+.dark-mode .text {
+  background: black;
+}
