@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { DATA } from "../common";
 
 const Lecturers = () => {
@@ -16,14 +17,7 @@ const Lecturers = () => {
             className="lecturers__card"
             key={id}
           >
-            <img
-              width="100%"
-              height="100%"
-              variant="top"
-              src={logo}
-              alt={`${name} logo`}
-              loading="lazy"
-            />
+            <Image width={112} height={112} src={logo} alt={`${name} logo`} />
             <div className="p-2 text text-capitalize text-secondary m-0 p-0">
               {name}
             </div>
