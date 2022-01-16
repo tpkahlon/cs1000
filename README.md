@@ -9,7 +9,7 @@
 	<strong>
 		<a href="http://cs1000.surge.sh">Primary Website</a>
 		•
-		<a href="http://cs1000.vercel.com">Secondary Website</a>
+		<a href="http://cs1000.vercel.app">Secondary Website</a>
 		•
 		<a href="https://github.com/tpkahlon/cs1000">Source</a>
 	</strong>
