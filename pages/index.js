@@ -9,7 +9,7 @@ export default function Home({ data, token, e }) {
         <title>CS1000</title>
         <link
           rel="icon"
-          href="https://cdn-icons.flaticon.com/png/512/924/premium/924915.png"
+          href="https://pics.freeicons.io/uploads/icons/png/15284412521598894797-512.png"
         />
       </Head>
       {e ? (

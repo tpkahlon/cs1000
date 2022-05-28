@@ -2,7 +2,7 @@
 	<img
 		width="300"
 		alt="CS1000"
-		src="https://cdn-icons.flaticon.com/png/512/924/premium/924915.png">
+		src="https://pics.freeicons.io/uploads/icons/png/15284412521598894797-512.png">
 </h1>
 
 <p align="center">
